@@ -1,6 +1,12 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { checkvalidate } from "../utils/Validate";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+
+import {auth} from '../utils/Firebase';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
@@ -8,10 +14,14 @@ const Login = () => {
 
   const [errormessage,seterrormessage]=useState(null);
 
+  const navigate=useNavigate();
+
 
   const email = useRef(null);
 
   const password = useRef(null);
+
+  //const phone=useRef(null);
 
   const handleButtonClick = () => {
     //validate the form data
@@ -21,10 +31,59 @@ const Login = () => {
 
     console.log(password.current.value);
 
+    //console.log(phone.current.value);
+
+
     const message=checkvalidate(email.current.value,password.current.value);
     //console.log(message);
     seterrormessage(message)    
+    if(message) return ;
+    
+  if(!issignform){
+    //signup logic
+    createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    console.log(user);
+    navigate('/browse')
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    seterrormessage(errorCode + "-" +errorMessage)
+    // ..
+  });
+
+  }
+  else{
+    //sign in logic
+    signInWithEmailAndPassword(auth,email.current.value,password.current.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    email.current.value="";
+  password.current.value="";
+  
+  navigate('/browse');
+
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    seterrormessage(errorCode + "-" + errorMessage);
+  });
+
+  }
+
+  
+
   };
+
+ 
 
   const toggleSignInForm = () => {
     setissignform(!issignform);
@@ -58,6 +117,7 @@ const Login = () => {
         )}
         {!issignform && (
           <input
+          //ref={phone}
             type="number"
             placeholder="Phone Number"
             className="p-2 m-2 w-full bg-slate-700"

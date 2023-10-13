@@ -7,6 +7,15 @@
 -signup form
 -Form validation
 -useRef Hook
+-firbase setup
+-deploying our app in production
+-create sign up user account
+-implement sign in user Api
+-created redux store with userslice
+-implemented sign out
+-fetch movies fromTMDB
+
+
 
 # Feature
 
