@@ -14,6 +14,13 @@
 -created redux store with userslice
 -implemented sign out
 -fetch movies fromTMDB
+-custom hook for now playing movie
+-custom hook for trailer
+-update store
+-embed the youtube video
+-make it auto play and mute
+-make it main container awesome
+
 
 
 
