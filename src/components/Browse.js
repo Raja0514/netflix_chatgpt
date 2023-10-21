@@ -1,23 +1,18 @@
-
 import Header from "./Header";
 import usenowplayingmovies from "../hooks/usenowplayingmovie";
 import Maincontainer from "./Maincontainer";
 import Secondarycontainer from "./Secondarycontainer";
 
-
 const Browse = () => {
-
-  
   usenowplayingmovies();
-
 
   return (
     <div>
       <Header />
-      <Maincontainer/>
-      <Secondarycontainer/>
-      {
-        /*
+      <Maincontainer />
+      <Secondarycontainer />
+
+      {/*
 
         main container
             videobackground
@@ -26,8 +21,7 @@ const Browse = () => {
            list of movies
            video cards
 
-        */
-      }
+        */}
     </div>
   );
 };
