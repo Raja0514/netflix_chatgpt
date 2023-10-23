@@ -4,12 +4,11 @@ import Videotitle from "./Videotitle";
 import { useSelector } from "react-redux";
 
 const Maincontainer = () => {
-
-  const movies = useSelector((store) => store.movies?.nowplayingmovies);
+  const movies = useSelector((store) => store.movies?.upcomingmovies);
 
   if (!movies) return;
 
-  const mainmovie = movies[0];
+  const mainmovie = movies[7];
 
   console.log(mainmovie);
 
@@ -21,11 +20,8 @@ const Maincontainer = () => {
 
   return (
     <div>
-
       <Videotitle title={original_title} overview={overview} />
-
       <Videobackground movieid={id} />
-      
     </div>
   );
 };

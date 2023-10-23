@@ -1,17 +1,20 @@
+
+
 import { API_OPTIONS } from "../utils/constant";
 
-import { addNowPlayingMovies } from "../utils/movieslice";
+import { addPopularMovies } from "../utils/movieslice";
 
 import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 
-const usenowplayingmovie = () => {
+ const usepopularmovies = () => {
+
   const dispatch = useDispatch();
 
   const movidata = async () => {
     let res = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?page=1",
+      "https://api.themoviedb.org/3/movie/popular?page=1",
       API_OPTIONS
     );
 
@@ -19,7 +22,7 @@ const usenowplayingmovie = () => {
 
     console.log(data.results);
 
-    dispatch(addNowPlayingMovies(data.results));
+    dispatch(addPopularMovies(data.results));
   };
 
   useEffect(() => {
@@ -27,4 +30,5 @@ const usenowplayingmovie = () => {
   }, []);
 };
 
-export default usenowplayingmovie;
+
+export default usepopularmovies;
