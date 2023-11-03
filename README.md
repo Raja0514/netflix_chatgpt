@@ -20,6 +20,9 @@
 -embed the youtube video
 -make it auto play and mute
 -make it main container awesome
+-create gpt search button
+-multilaguage setup
+
 
 
 

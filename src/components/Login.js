@@ -3,6 +3,7 @@ import Header from "./Header";
 import { checkvalidate } from "../utils/Validate";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { BACKGROUND_IMG_URL } from "../utils/constant";
 
 
 import {auth} from '../utils/Firebase';
@@ -94,7 +95,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/9c11501a-c5cd-49ca-b3bc-f1e6925794a8/OM-en-20231009-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+          src={BACKGROUND_IMG_URL}
           alt="log"
         />
       </div>

@@ -10,25 +10,33 @@ const movieslice=createSlice({
         upcomingmovies:null,
         topratedmovies:null
     },
+    
     reducers:{
+
+
         addNowPlayingMovies:(state,action)=>{
           
             state.nowplayingmovies=action.payload;
 
         },
+
         addNewTrailer:(state,action)=>{
             state.newtrailer=action.payload
         },
+
         addPopularMovies:(state,action)=>{
 
             state.popularmovies=action.payload
 
         },
+
+
         addUpcomingMovies:(state,action)=>{
 
             state.upcomingmovies=action.payload
 
         },
+
         addTopRatedMovies:(state,action)=>{
             
             state.topratedmovies=action.payload

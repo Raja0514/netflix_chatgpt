@@ -13,8 +13,11 @@ const useMoviestrailer=({movieid})=>{
   const movieapi = async () => {
 
     const data = await fetch(
+      
       `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US`,
+
       API_OPTIONS
+
     );
 
     const resjon = await data.json();
@@ -34,6 +37,8 @@ const useMoviestrailer=({movieid})=>{
     console.log(trailer);
     
     dispatch(addNewTrailer(trailer))
+
+    
   };
 
   useEffect(() => {
