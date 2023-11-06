@@ -48,7 +48,7 @@ const Header = () => {
           
           {showgptsearch && (
             <select
-              className="px-1 bg-red-800 m-1 text-white rounded-lg"
+              className="px-1 bg-gray-800 m-1 text-white rounded-lg"
               onChange={selectlanguage}
             >
               {SUPPORTED_LANGUAGE.map((language) => (

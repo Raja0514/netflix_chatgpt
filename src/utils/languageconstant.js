@@ -2,6 +2,7 @@ const language = {
   en: {
     search: "search",
     gptsearchplaceholder: "what you like to watch today",
+    data:"welcome"
   },
   tamil: {
     search: "தேடல்",

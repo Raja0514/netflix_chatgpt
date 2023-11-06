@@ -2,18 +2,19 @@ import React from "react";
 import Movircard from "./Movircard";
 
 const Movielist = ({ title, movies }) => {
-  console.log(title);
-  console.log(movies.map((mov) => mov.id));
+  //console.log(title);
+  //console.log(movies);
+  
 
   return (
     <div className="">
       <div>
-        <h1 className="text-3xl p-2  text-white">{title}</h1>
+        <h1 className="text-3xl  text-white">{title}</h1>
       </div>
-      <div className="flex overflow-x-hidden hover:overflow-x-scroll scrollbar-hide">
-        <div className="flex">
-          {movies?.map((movied) => (
-            <Movircard key={movied.id} poster={movied.poster_path} />
+      <div className="flex ">
+        <div className="flex flex-wrap mx-4">
+          {movies?.map((mov) => (
+            <Movircard key={mov} poster={mov.poster_path} />
           ))}
         </div>
       </div>

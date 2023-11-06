@@ -9,6 +9,7 @@ export const API_OPTIONS = {
 
 export const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
+
 export const BACKGROUND_IMG_URL =
   "https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/9c11501a-c5cd-49ca-b3bc-f1e6925794a8/OM-en-20231009-popsignuptwoweeks-perspective_alpha_website_medium.jpg";
 
@@ -16,4 +17,7 @@ export const SUPPORTED_LANGUAGE = [
   { identifier: "en", name: "English" },
   { identifier: "tamil", name: "Tamil" },
   { identifier: "spanish", name: "Spanish" },
+  
 ];
+
+export const OPENAI_KEY = "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";
