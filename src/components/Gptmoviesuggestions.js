@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Movielist from "./Movielist";
 import { IMG_URL } from "../utils/constant";
 
 const Gptmoviesuggestions = () => {
@@ -12,26 +11,27 @@ const Gptmoviesuggestions = () => {
 
   return (
     <>
-      <div className="bg-black p-4 mt-10 mx-4 text-white flex flex-wrap  bg-opacity-80">
-        {/* {movienames?.map((data, index) => (
+      <div className="bg-black p-4 mt-10 mx-4 text-white flex flex-wrap justify-center  bg-opacity-80">
+        {movienames?.map((data, index) => (
           <>
-          <div>
-          <h1 className="text-center text-lg font-bold">{data}</h1>
-          <img
-            className="w-52 m-6"
-            src={IMG_URL+tmtbresults[index]?.results[0]?.poster_path}
-            alt="poster"
-          />
-
-          </div>
-          
+            <div>
+              <div>
+                <h1 className="md:text-center text-lg font-bold text-center ">
+                  {data}
+                </h1>
+                <img
+                  className="w-36 md:w-52 m-6  rounded-lg "
+                  src={IMG_URL + tmtbresults[index]?.results[0]?.poster_path}
+                  alt="poster"
+                />
+              </div>
+            </div>
           </>
-          
-        ))} */}
-
-        {movienames.map((movie, index) => (
-          <Movielist key={movie} title={movie} movies={tmtbresults[index]} />
         ))}
+
+        {/* {movienames.map((movie, index) => (
+          <Movielist key={movie} title={movie} movies={tmtbresults[index]} />
+        ))} */}
       </div>
     </>
   );

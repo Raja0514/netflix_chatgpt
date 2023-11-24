@@ -20,7 +20,7 @@ import { useDispatch } from "react-redux";
 
     let data = await res.json();
 
-    console.log(data.results);
+    //console.log(data.results);
 
     dispatch(addPopularMovies(data.results));
   };

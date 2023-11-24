@@ -9,7 +9,7 @@ const Maincontainer = () => {
 
   if (!movies) return;
 
-  const mainmovie = movies[0];
+  const mainmovie = movies[7];
 
   //console.log(mainmovie);
 
@@ -20,7 +20,7 @@ const Maincontainer = () => {
   const { original_title, overview, id } = mainmovie;
 
   return (
-    <div>
+    <div className="pt-[40%] md:pt-0 bg-black">
 
       <Videotitle title={original_title} overview={overview} />
       

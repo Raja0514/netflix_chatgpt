@@ -9,10 +9,10 @@ const Movielist = ({ title, movies }) => {
   return (
     <div className="">
       <div>
-        <h1 className="text-3xl  text-white">{title}</h1>
+        <h1 className=" text-xl p-2 md:text-3xl md:ml-5 md:mb-2   text-white">{title}</h1>
       </div>
-      <div className="flex ">
-        <div className="flex flex-wrap mx-4">
+      <div className="flex overflow-x-hidden hover:overflow-x-scroll scrollbar-hide">
+        <div className="flex">
           {movies?.map((mov) => (
             <Movircard key={mov} poster={mov.poster_path} />
           ))}

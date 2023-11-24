@@ -5,18 +5,15 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { BACKGROUND_IMG_URL } from "../utils/constant";
 
+import { auth } from "../utils/Firebase";
 
-import {auth} from '../utils/Firebase';
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
   const [issignform, setissignform] = useState(true);
 
-  const [errormessage,seterrormessage]=useState(null);
+  const [errormessage, seterrormessage] = useState(null);
 
-  const navigate=useNavigate();
-
+  
 
   const email = useRef(null);
 
@@ -26,65 +23,60 @@ const Login = () => {
 
   const handleButtonClick = () => {
     //validate the form data
-    
 
-    console.log(email.current.value);
+    // console.log(email.current.value);
 
-    console.log(password.current.value);
+    // console.log(password.current.value);
 
     //console.log(phone.current.value);
 
-
-    const message=checkvalidate(email.current.value,password.current.value);
+    const message = checkvalidate(email.current.value, password.current.value);
     //console.log(message);
-    seterrormessage(message)    
-    if(message) return ;
-    
-  if(!issignform){
-    //signup logic
-    createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log(user);
-    navigate('/browse')
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    seterrormessage(errorCode + "-" +errorMessage)
-    // ..
-  });
+    seterrormessage(message);
+    if (message) return;
 
-  }
-  else{
-    //sign in logic
-    signInWithEmailAndPassword(auth,email.current.value,password.current.value)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user);
-    email.current.value="";
-  password.current.value="";
-  
-  navigate('/browse');
+    if (!issignform) {
+      //signup logic
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+         
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          seterrormessage(errorCode + "-" + errorMessage);
+          // ..
+        });
+    } else {
+      //sign in logic
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          email.current.value = "";
+          password.current.value = "";
 
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    seterrormessage(errorCode + "-" + errorMessage);
-  });
-
-  }
-
-  
-
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          seterrormessage(errorCode + "-" + errorMessage);
+        });
+    }
   };
-
- 
 
   const toggleSignInForm = () => {
     setissignform(!issignform);
@@ -95,6 +87,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
+          className="h-screen object-cover md:w-screen"
           src={BACKGROUND_IMG_URL}
           alt="log"
         />
@@ -104,9 +97,9 @@ const Login = () => {
         onSubmit={(e) => {
           e.preventDefault();
         }}
-        className="bg-black absolute w-3/12 p-12 my-32 mx-auto right-0 left-0 text-white rounded-xl bg-opacity-70"
+        className="bg-black absolute w-full md:w-3/12 p-12 my-32 mx-auto right-0 left-0 text-white rounded-xl bg-opacity-70"
       >
-        <h1 className="font-bold text-3xl py-4 text-center">
+        <h1 className="font-bold text-lg md:text-3xl py-4 text-center">
           {issignform ? "Sign In" : "Sign Up"}
         </h1>
         {!issignform && (
@@ -118,7 +111,7 @@ const Login = () => {
         )}
         {!issignform && (
           <input
-          //ref={phone}
+            //ref={phone}
             type="number"
             placeholder="Phone Number"
             className="p-2 m-2 w-full bg-slate-700"

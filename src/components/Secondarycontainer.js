@@ -5,30 +5,28 @@ import { useSelector } from "react-redux";
 const Secondarycontainer = () => {
   const moviesdata = useSelector((store) => store.movies);
 
- // console.log(moviesdata);
+  // console.log(moviesdata);
 
-  return moviesdata.nowplayingmovies&&(
-    <div className="bg-black">
-      <div className="  pl-12 relative z-20 ">
-        <Movielist
-          title="Now Playing Movies"
-          movies={moviesdata.nowplayingmovies}
-        />
-        <Movielist
-          title="Upcoming Movies"
-          movies={moviesdata.upcomingmovies}
-        />
-        <Movielist
-          title="Popular Movies"
-          movies={moviesdata.popularmovies}
-        />
-        <Movielist
-          title="Top Rated Movies"
-          movies={moviesdata.topratedmovies}
-        />
-      </div>
+  return (
+    moviesdata.nowplayingmovies && (
+      <div className="bg-black w-full">
+        <div className="pl-12 relative z-20 ">
+          <Movielist
+            title="Now Playing Movies"
+            movies={moviesdata.nowplayingmovies}
+          />
+          <Movielist
+            title="Upcoming Movies"
+            movies={moviesdata.upcomingmovies}
+          />  
+          <Movielist title="Popular Movies" movies={moviesdata.popularmovies} />
+          <Movielist
+            title="Top Rated Movies"
+            movies={moviesdata.topratedmovies}
+          />
+        </div>
 
-      {/*
+        {/*
 
         Movielist--popular
         moviecards*n
@@ -38,7 +36,8 @@ const Secondarycontainer = () => {
 
 
         */}
-    </div>
+      </div>
+    )
   );
 };
 

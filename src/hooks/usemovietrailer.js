@@ -22,19 +22,19 @@ const useMoviestrailer=({movieid})=>{
 
     const resjon = await data.json();
 
-    console.log(resjon);
+    //console.log(resjon);
 
     const filterdata = resjon.results.filter((mov) => mov.type === "Trailer");
 
-    console.log(filterdata);
+    //console.log(filterdata);
 
     const trailer = filterdata.length ? filterdata[0] : resjon.results[0];
 
-    console.log(filterdata);
+    //console.log(filterdata);
 
-    console.log(resjon.results[0]);
+    //console.log(resjon.results[0]);
 
-    console.log(trailer);
+    //console.log(trailer);
     
     dispatch(addNewTrailer(trailer))
 
