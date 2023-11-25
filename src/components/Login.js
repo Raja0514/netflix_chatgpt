@@ -7,13 +7,10 @@ import { BACKGROUND_IMG_URL } from "../utils/constant";
 
 import { auth } from "../utils/Firebase";
 
-
 const Login = () => {
   const [issignform, setissignform] = useState(true);
 
   const [errormessage, seterrormessage] = useState(null);
-
-  
 
   const email = useRef(null);
 
@@ -45,7 +42,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           //const user = userCredential.user;
-         
           // ...
         })
         .catch((error) => {
