@@ -8,10 +8,10 @@ const Secondarycontainer = () => {
   // console.log(moviesdata);
 
   return (
-    moviesdata.nowplayingmovies && (
+    moviesdata.topratedmovies && (
       <div className="bg-black w-full">
         <div className="pl-12 relative z-20 ">
-          <Movielist
+          {/* <Movielist
             title="Now Playing Movies"
             movies={moviesdata.nowplayingmovies}
           />
@@ -19,7 +19,7 @@ const Secondarycontainer = () => {
             title="Upcoming Movies"
             movies={moviesdata.upcomingmovies}
           />  
-          <Movielist title="Popular Movies" movies={moviesdata.popularmovies} />
+          <Movielist title="Popular Movies" movies={moviesdata.popularmovies} /> */}
           <Movielist
             title="Top Rated Movies"
             movies={moviesdata.topratedmovies}
