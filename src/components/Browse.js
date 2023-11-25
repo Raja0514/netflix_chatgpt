@@ -4,7 +4,7 @@ import Maincontainer from "./Maincontainer";
 import Secondarycontainer from "./Secondarycontainer";
 //import usePopularmovies from "../hooks/usePopularmovies";
 //import useUpcomingmovies from "../hooks/useUpcomingmovies";
-import useTopratedmovies from "../hooks/useTopratedmovies";
+import useTopratedmovies from "../hooks/useTopmovies";
 
 import Gptsearch from "./Gptsearch";
 import { useSelector } from "react-redux";
@@ -18,6 +18,7 @@ const Browse = () => {
   // fun1();
   // const fun2=useUpcomingmovies();
   // fun2();
+
   useTopratedmovies();
   
 
