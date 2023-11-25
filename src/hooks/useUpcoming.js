@@ -1,20 +1,17 @@
-
-
 import { API_OPTIONS } from "../utils/constant";
 
-import { addPopularMovies } from "../utils/movieslice";
+import { addUpcomingMovies } from "../utils/movieslice";
 
 import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 
- const usePopularmovies = () => {
-
+const useUpcomingmovies = () => {
   const dispatch = useDispatch();
 
   const movidata = async () => {
     let res = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?page=1",
+      "https://api.themoviedb.org/3/movie/upcoming?page=1",
       API_OPTIONS
     );
 
@@ -22,13 +19,13 @@ import { useDispatch } from "react-redux";
 
     //console.log(data.results);
 
-    dispatch(addPopularMovies(data.results));
+    dispatch(addUpcomingMovies(data.results));
   };
 
   useEffect(() => {
     movidata();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
-
-export default usePopularmovies;
+export default useUpcomingmovies;
