@@ -44,7 +44,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed up
-          const user = userCredential.user;
+          //const user = userCredential.user;
          
           // ...
         })
