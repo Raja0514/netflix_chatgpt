@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 
- const usepopularmovies = () => {
+ const usePopularmovies = () => {
 
   const dispatch = useDispatch();
 
@@ -31,4 +31,4 @@ import { useDispatch } from "react-redux";
 };
 
 
-export default usepopularmovies;
+export default usePopularmovies;

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 
-const useupcomingmovies = () => {
+const useUpcomingmovies = () => {
   const dispatch = useDispatch();
 
   const movidata = async () => {
@@ -27,4 +27,4 @@ const useupcomingmovies = () => {
   }, []);
 };
 
-export default useupcomingmovies;
+export default useUpcomingmovies;

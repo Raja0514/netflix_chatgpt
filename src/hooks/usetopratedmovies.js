@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 
-const usetopratedmovies = () => {
+const useTopratedmovies = () => {
   const dispatch = useDispatch();
 
   const movidata = async () => {
@@ -27,4 +27,4 @@ const usetopratedmovies = () => {
   }, []);
 };
 
-export default usetopratedmovies;
+export default useTopratedmovies;

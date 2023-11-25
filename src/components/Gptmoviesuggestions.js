@@ -5,7 +5,7 @@ import { IMG_URL } from "../utils/constant";
 const Gptmoviesuggestions = () => {
   const { movienames, tmtbresults } = useSelector((store) => store.gpt);
 
-  console.log("tets", tmtbresults);
+  //console.log("tets", tmtbresults);
 
   if (!movienames && !tmtbresults) return null;
 

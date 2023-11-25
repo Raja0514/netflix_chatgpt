@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { togglegptsearch } from "../utils/gptslice";
 import { SUPPORTED_LANGUAGE } from "../utils/constant";
 import { changeLaguage } from "../utils/configslice";
@@ -13,6 +12,7 @@ import { addUser, removeUser } from "../utils/userslice";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Header = () => {
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();

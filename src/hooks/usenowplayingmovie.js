@@ -6,7 +6,8 @@ import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 
-const usenowplayingmovie = () => {
+const useNowplayingmovie = () => {
+  
   const dispatch = useDispatch();
 
   const movidata = async () => {
@@ -27,4 +28,4 @@ const usenowplayingmovie = () => {
   }, []);
 };
 
-export default usenowplayingmovie;
+export default useNowplayingmovie;
