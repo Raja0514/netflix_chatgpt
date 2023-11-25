@@ -24,6 +24,7 @@ const useTopratedmovies = () => {
 
   useEffect(() => {
     movidata();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

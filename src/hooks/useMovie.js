@@ -34,6 +34,7 @@ const useMoviestrailer = ({ movieid }) => {
 
   useEffect(() => {
     movieapi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

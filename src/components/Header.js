@@ -39,7 +39,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    
+
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
@@ -53,6 +53,7 @@ const Header = () => {
         navigate("/")
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
