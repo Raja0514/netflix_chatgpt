@@ -48,7 +48,7 @@ const Gptsearchbar = () => {
       //Error handling
     }
 
-    console.log(results.choices?.[0]?.message?.content);
+    //console.log(results.choices?.[0]?.message?.content);
 
     //Andaz Apna Apna, Chupke Chupke, Gol Maal, Angoor, Padosan
 
@@ -58,7 +58,7 @@ const Gptsearchbar = () => {
 
     //["Andaz" , "Apna Apna", "Chupke Chupke", "Gol Maal", "Angoor", "Padosan"]
 
-    console.log(gptmovies);
+    //console.log(gptmovies);
 
     const promisearray=gptmovies.map((movie)=>searchTMDB(movie));
 
@@ -66,7 +66,7 @@ const Gptsearchbar = () => {
 
     const finalresults=await Promise.all(promisearray);
     
-    console.log(finalresults);
+    //console.log(finalresults);
 
     dispatch(moviesgptapi({movienames:gptmovies,Tmdbresults:finalresults})) //multi data we can send this way
 
